@@ -44,6 +44,7 @@ const Header = ({ currentUser, hidden }) => {
     );
 }
 
+// Sick advanced way to destructure
 const mapStateToProps = ({user: { currentUser }, cart: { hidden }}) => ({
     currentUser,
     hidden
