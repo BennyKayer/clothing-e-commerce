@@ -6,7 +6,7 @@ import Directory from "../../components/directory/directory.component.jsx";
 const Homepage = () => {
     return (
         <HomePageContainer>
-            <Directory></Directory>
+            <Directory />
         </HomePageContainer>
     );
 };

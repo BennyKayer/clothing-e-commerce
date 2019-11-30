@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { connect } from "react-redux";
 import { auth } from "../../firebase/firebase.utils";
@@ -10,50 +9,45 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component.jsx";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
-import "./header.styles.scss";
+import {
+    HeaderContainer,
+    LogoContainer,
+    OptionsContainer,
+    OptionDiv,
+    OptionLink,
+} from "./header.styles.jsx";
 
 const Header = ({ currentUser, hidden }) => {
-  return (
-    <div className="header">
-      <Link className="logo-container" to="/">
-        <Logo className="logo" />
-      </Link>
+    return (
+        <HeaderContainer>
+            <LogoContainer to="/">
+                <Logo />
+            </LogoContainer>
 
-      <div className="options">
-        <Link className="option" to="/shop">
-          SHOP
-        </Link>
+            <OptionsContainer>
+                <OptionLink to="/shop">SHOP</OptionLink>
 
-        <Link className="option" to="/">
-          CONTACT
-        </Link>
+                <OptionLink to="/">CONTACT</OptionLink>
 
-        {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
-            SIGN OUT
-          </div>
-        ) : (
-          <Link className="option" to="/signin">
-            SIGN IN
-          </Link>
-        )}
-        <CartIcon />
-      </div>
+                {currentUser ? (
+                    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+                    <OptionDiv onClick={() => auth.signOut()}>
+                        SIGN OUT
+                    </OptionDiv>
+                ) : (
+                    <OptionLink to="/signin">SIGN IN</OptionLink>
+                )}
+                <CartIcon />
+            </OptionsContainer>
 
-      {hidden ? null : <CartDropdown />}
-    </div>
-  );
+            {hidden ? null : <CartDropdown />}
+        </HeaderContainer>
+    );
 };
 
-// oh yeah even worse thing is coming now
-// const mapStateToProps = (state) => ({
-//     currentUser: selectCurrentUser(state),
-//     hidden: selectCartHidden(state)
-// });
-
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-  hidden: selectCartHidden
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);
