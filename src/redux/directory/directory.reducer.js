@@ -1,43 +1,42 @@
 const INITIAL_STATE = {
-    sections : [
+    sections: [
         {
-            title : 'hats',
-            imageUrl : 'https://images.unsplash.com/photo-1492467008961-6e33db522c9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            id : 1,
-            linkUrl: 'shop/hats',
+            title: "hats",
+            imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+            id: 1,
+            linkUrl: "shop/hats",
         },
         {
-            title : 'jackets',
-            imageUrl : 'https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-            id : 2,
-            linkUrl: 'shop/jackets',
+            title: "jackets",
+            imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
+            id: 2,
+            linkUrl: "shop/jackets",
         },
         {
-            title : 'sneakers',
-            imageUrl : 'https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-            id : 3,
-            linkUrl: 'shop/sneakers',
+            title: "sneakers",
+            imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+            id: 3,
+            linkUrl: "shop/sneakers",
         },
         {
-            title : "women",
-            imageUrl : "https://images.unsplash.com/photo-1481824429379-07aa5e5b0739?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-            id : 4,
-            size : "big",
-            linkUrl: 'shop/women',
+            title: "womens",
+            imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+            size: "large",
+            id: 4,
+            linkUrl: "shop/womens",
         },
         {
-            title : "men",
-            imageUrl : "https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-            id : 5,
-            size : "big",
-            linkUrl: 'shop/men',
-        }
-    ]
-    
+            title: "mens",
+            imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+            size: "large",
+            id: 5,
+            linkUrl: "shop/mens",
+        },
+    ],
 };
 
 const directoryReducer = (state = INITIAL_STATE, action) => {
-    switch(action.type) {
+    switch (action.type) {
         default:
             return state;
     }

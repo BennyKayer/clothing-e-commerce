@@ -1,11 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const OptionContainerStyles = css`
-    padding: 10px 15px;
-    cursor: pointer;
-`;
-// style like that for html standard
 export const HeaderContainer = styled.div`
     height: 70px;
     width: 100%;
@@ -13,7 +8,7 @@ export const HeaderContainer = styled.div`
     justify-content: space-between;
     margin-bottom: 25px;
 `;
-// style like this for custom components
+
 export const LogoContainer = styled(Link)`
     height: 100%;
     width: 70px;
@@ -27,11 +22,8 @@ export const OptionsContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
 `;
-// shared styles that use block of css
-export const OptionLink = styled(Link)`
-    ${OptionContainerStyles}
-`;
 
-export const OptionDiv = styled.div`
-    ${OptionContainerStyles}
+export const OptionLink = styled(Link)`
+    padding: 10px 15px;
+    cursor: pointer;
 `;
